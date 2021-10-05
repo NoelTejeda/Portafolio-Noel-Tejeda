@@ -1,5 +1,5 @@
 /* extraer tipografia estilo de letra montserrat descargado de fonts.google.com */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;700&display=swap");
 
 * {
   margin: 0;
@@ -8,26 +8,28 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* explicación de vh y vw = Vh hace referencia a la centésima parte de la altura del viewport y vw a la centésima parte del ancho del viewport. Estas medidas tienen múltiples usos, por ejemplo cuando queremos tener una imagen de fondo que ocupe todo el ancho y alto de nuestro pantalla. También cuando queremos que nuestro texto varíe de acuerdo a las medidas del dispositivo  */
-.wrapper{
+.wrapper,
+/* para reutilizar la clase .wrapper se le coloca una coma (,) y se coloca la otra a usar */
+.portafolio {
   width: 100vw;
   height: 100vh;
   background-color: rgb(0, 0, 0);
   color: white;
 }
 
-.menu{
-/* colocamos todo lo que estaba dentro del menu uno al lado del otro */
+.menu {
+  /* colocamos todo lo que estaba dentro del menu uno al lado del otro */
   display: flex;
   width: 50%;
   justify-content: space-around;
 }
 
-.menu a{
-  color:rgb(213, 216, 21);
+.menu a {
+  color: rgb(213, 216, 21);
   /* text-decoration:none quita la linea de subrayado que viene por defecto al crear un href*/
   text-decoration: none;
   /* padding hace que al pasar el mouse el color se vea más separado de las letras */
@@ -35,20 +37,20 @@ body {
 }
 
 /* con list-style: se puede cambiar o quitar los iconos de la lista; es decir; cambiar por uno redondo, etc o quitar con none */
-.menu li{
-  list-style:none;
+.menu li {
+  list-style: none;
 }
 
 /* con la propiedad hover, al pasar el mouse por el elemento, este cambia de color */
-.menu a:hover{
+.menu a:hover {
   background-color: white;
   color: black;
   /* al colocar transition se habilitan otras propiedades como (webkit,moz,ms,o) que ayudan a evitar inconvenientes en otras páginas web. y su función es que al pasar el mouse le dé otro aspecto*/
-  transition: ease-in .3s;
-  -webkit-transition: ease-in .3s;
-  -moz-transition: ease-in .3s;
-  -ms-transition: ease-in .3s;
-  -o-transition: ease-in .3s;
+  transition: ease-in 0.3s;
+  -webkit-transition: ease-in 0.3s;
+  -moz-transition: ease-in 0.3s;
+  -ms-transition: ease-in 0.3s;
+  -o-transition: ease-in 0.3s;
 }
 /* en conjunto con hover, hace que darle click el elemento cambie de color, pero no lo voy a activar
 .menu a:active{
@@ -56,35 +58,35 @@ body {
 }*/
 
 /* el span que habiamos creado en el archivo html lo modificamos aqui, para darle un color distinto a la letra T */
-.brand span{
+.brand span {
   color: rgb(241, 245, 8);
 }
 
 /* para que el marquen de lo que denominamos como brand esté el mismo nivel del menú */
-.brand{
+.brand {
   margin-top: -7px;
 }
 /* La propiedad CSS display flex coloca los elementos uno al lado de otro, parecido a display:block  */
-.navbar{
-  display:flex;
+.navbar {
+  display: flex;
   /* justify-content: coloca los elementos separados a la esquina del otro */
-  justify-content:space-between;
+  justify-content: space-between;
   padding: 2em;
 }
 
-.main{
+.main {
   margin: 0 auto;
   width: 80vw;
   height: 80vh;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
 }
 
-.download-cv{
+.download-cv {
   padding: 10px 20px;
   background-color: rgb(180, 226, 13);
-  border:none;
+  border: none;
   /* al colocar border radius se habilitan webkit,moz,ms,o */
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -92,14 +94,14 @@ body {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   /* para separar el boton del texto usamos: */
-  margin-top: 15px;
+  margin-top: 20px;
   /* para que aparezca una mano al pasar por el boton */
-  cursor:pointer;
+  cursor: pointer;
 }
 /* al pasar el mouse por el botom cambie de color se usa hover */
-.download-cv:hover{
+.download-cv:hover {
   background-color: black;
-  color:yellow;
+  color: yellow;
 }
 
 /* darle estilo a la imagen 
@@ -107,3 +109,99 @@ body {
   width: 350px; 
    border: 7px solid yellow; 
 }*/
+/* -----------segunda parte sobre about:----------------- */
+.about {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  width: 100vw;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  grid-column: 1/5;
+}
+
+.about-info {
+  grid-column: 5/10;
+  padding: 2em;
+}
+
+.about-info h2 {
+  font-size: 2em;
+}
+.divider {
+  height: 4px;
+  width: 60px;
+  background-color: yellow;
+  margin-top: 10px;
+  margin-bottom: 3em;
+}
+
+.about p{
+  /* separacion de parrafo */
+  margin-bottom: 2em;
+}
+/* -------------edicion de la tercera parte (my portfolio) */
+.portafolio-headings{
+width: 100vw;
+padding: 5em;
+}
+.portafolio-headings h2{
+  font-size: 2.5em;
+}
+.portafolio .container{
+  width: 80vw;
+  height: 50vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+/* card: es la caja donde aloja la información de project description, los iconos github, mundo, code, project details */
+.card{
+  width: 300px;
+  height: 395px;
+  background-color: rgb(150, 20, 20);
+  margin: 1em;
+}
+.card_img{
+  width: 100%;
+  height: 150px;
+  background-image: url(../img/2-original.png);
+  background-size: cover;
+}
+.card_title{
+  padding: 20px;
+}
+/* separa los iconos de github, mundo, code */
+.card_projects-links{
+  display: flex;
+  justify-content: space-evenly;
+}
+/* cambia el color de los iconos */
+.card_projects-links a{
+  color: white;
+  text-decoration: none;
+}
+/* cambia el tamaño de los iconos */
+.card_projects-links i{
+  font-size: 3em;
+}
+
+.card .project-details{
+  margin: 1em;
+  margin: 0 auto;
+  width: 70%;
+}
+.card .project-details a{
+  text-decoration: none;
+  /* color: yellow; */
+  text-transform: uppercase;
+}
+/* para modificar el centrado de project details (icono) */
+.project-details-content{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 1em;
+}
